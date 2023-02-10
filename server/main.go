@@ -34,5 +34,6 @@ func main() {
 		db, _ := global.GVA_DB.DB()
 		defer db.Close()
 	}
+	global.GVA_LOG.Info("add log")
 	core.RunWindowsServer()
 }
