@@ -11,7 +11,7 @@ type SysAuthority struct {
 	AuthorityId     uint            `json:"authorityId" gorm:"not null;unique;primary_key;comment:角色ID;size:90"` // 角色ID
 	AuthorityName   string          `json:"authorityName" gorm:"comment:角色名"`                                    // 角色名
 	ParentId        *uint           `json:"parentId" gorm:"comment:父角色ID"`                                       // 父角色ID
-	DataAuthorityId []*SysAuthority `json:"dataAuthorityId" gorm:"many2many:sys_data_authority_id;"`
+	DataAuthorityId []*SysAuthority `json:"dataAuthorityId" gorm:"many2many:sys_data_authority_id;"`             // 角色的资源权限
 	Children        []SysAuthority  `json:"children" gorm:"-"`
 	SysBaseMenus    []SysBaseMenu   `json:"menus" gorm:"many2many:sys_authority_menus;"`
 	Users           []SysUser       `json:"-" gorm:"many2many:sys_user_authority;"`
